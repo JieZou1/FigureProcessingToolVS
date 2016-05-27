@@ -124,10 +124,20 @@ namespace Panel
             line_node.Attributes.Add("Dash", "Solid");
 
             HtmlNode line_color_node = doc.CreateElement("Color");
-            line_color_node.Attributes.Add("B", "30");
-            line_color_node.Attributes.Add("G", "22");
-            line_color_node.Attributes.Add("R", "234");
-            line_color_node.Attributes.Add("Alpha", "255");
+            if (rect_object.Name.StartsWith("label"))
+            {
+                line_color_node.Attributes.Add("B", "234");
+                line_color_node.Attributes.Add("G", "22");
+                line_color_node.Attributes.Add("R", "30");
+                line_color_node.Attributes.Add("Alpha", "255");
+            }
+            else
+            {
+                line_color_node.Attributes.Add("B", "30");
+                line_color_node.Attributes.Add("G", "22");
+                line_color_node.Attributes.Add("R", "234");
+                line_color_node.Attributes.Add("Alpha", "255");
+            }
 
             HtmlNode line_start_arrow_node = doc.CreateElement("StartArrowHead");
             line_start_arrow_node.Attributes.Add("Type", "None");
