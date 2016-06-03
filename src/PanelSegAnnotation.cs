@@ -80,8 +80,12 @@ namespace Panel
             {
                 PanelSegInfo panel = panels[i];
 
+                if (panel.panelRect.IsEmpty) continue;
+
                 RectObject rect_panel = new RectObject("panel " + panel.panelLabel, panel.panelRect);
                 rectObjects.Add(rect_panel);
+
+                if (panel.labelRect.IsEmpty) continue;
 
                 RectObject rect_label = new RectObject("label " + panel.panelLabel, panel.labelRect);
                 rectObjects.Add(rect_label);
