@@ -35,6 +35,8 @@ namespace PanelSeg2IPhotoDraw
                 string output_file = input_file.Replace(input_dir, output_dir);
                 output_file = output_file.Replace(".xml", "_data.xml");
 
+                System.Console.WriteLine("Processing " + i.ToString() + " " + input_file);
+
                 PanelSegAnnotation panel_seg = new PanelSegAnnotation();
                 panel_seg.LoadRectObjects(input_file);
                 panel_seg.SaveRectObjectIniPhotoDrawFormat(output_file);
